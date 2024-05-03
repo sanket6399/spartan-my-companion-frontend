@@ -8,7 +8,7 @@ const Arrowdown = ({ id }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:8080/downvote/${id}`,
+        `https://x6scf9otx8.execute-api.us-east-1.amazonaws.com/spartan-v1/spartan-event-downvote?id=${id}`,
         {
           userId,
         }
