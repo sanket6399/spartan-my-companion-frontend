@@ -55,11 +55,11 @@ const Content = () => {
               p-4 md:p-5 rounded-lg shadow-md flex items-start gap-5"
               >
                 <div className="left-section space-y-1 text-center">
-                  <Arrowup id={question._id} />
+                  <Arrowup id={question.question_id} />
                   <h3 className="text-sm md:text-base">
                     {question?.upvote?.length || 0}
                   </h3>
-                  <Arrowdown id={question._id} />
+                  <Arrowdown id={question.question_id} />
                 </div>
                 <div className="right-section w-full">
                   <h1 className="text-base md:text-lg dark:text-white">

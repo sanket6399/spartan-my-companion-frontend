@@ -8,12 +8,12 @@ const Arrowup = ({ id }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `http://localhost:8080/upvote/${id}`,
+        `https://x6scf9otx8.execute-api.us-east-1.amazonaws.com/spartan-v1/spartan-event-upvote?id=${id}`,
         {
           userId,
         }
       );
-      console.log(res.status);
+      //console.log(res.status);
       if (res.status === 200) {
         alert("Upvoted successfully");
       } else {
