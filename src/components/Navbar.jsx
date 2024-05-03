@@ -28,7 +28,7 @@ const Navbar = () => {
      px-4
      md:px-20"
     >
-      <div className="text-sm md:text-base font-bold text-white-500 cursor-pointer flex items-center gap-4">
+      <div className="text-sm md:text-base font-bold text-white cursor-pointer flex items-center gap-4">
         <div
           onClick={() => dispatch(toggle())}
           className="
