@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-5">
           <div
             className="cursor-pointer text-sm 
-          md:text-base dark:text-white"
+          md:text-base text-white dark:text-white"
             onClick={() => {
               localStorage.removeItem("user");
               navigate("/login");

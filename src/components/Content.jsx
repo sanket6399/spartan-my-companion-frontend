@@ -46,7 +46,7 @@ const Content = () => {
             <div
               key={question.question_id}
               className="w-[96%] md:w-[80%] mx-12 flex flex-col 
-              items-end  p-3 md:p-4 rounded-md bg-purple-100
+              items-end  p-3 md:p-4 rounded-md bg-[#0055a2]
                dark:bg-slate-400"
             >
               <div
