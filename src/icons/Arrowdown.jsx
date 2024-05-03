@@ -13,15 +13,15 @@ const Arrowdown = ({ id }) => {
           userId,
         }
       );
-      console.log(res.status);
+      // console.log(res.status);
       if (res.status === 200) {
-        alert("downvoted successfully");
+        console.log("downvoted successfully");
       } else {
-        alert("You have already downvoted");
+        console.log("You have already downvoted");
       }
     } catch (err) {
       console.log(err);
-      alert("You have already downvoted");
+      console.log("You have already downvoted");
     }
   };
   return (

@@ -15,13 +15,13 @@ const Arrowup = ({ id }) => {
       );
       //console.log(res.status);
       if (res.status === 200) {
-        alert("Upvoted successfully");
+        console.log("Upvoted successfully");
       } else {
-        alert("You have already upvoted");
+        console.log("You have already upvoted");
       }
     } catch (err) {
       console.log(err);
-      alert("You have already upvoted");
+      console.log("You have already upvoted");
     }
   };
 
