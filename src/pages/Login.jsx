@@ -41,13 +41,13 @@ const Login = () => {
       >
         <div className="mt-12 md:mt-0">
           <a href="/">
-            <h3 className="text-4xl font-bold text-purple-950 dark:text-white">
+            <h3 className="text-4xl font-bold text-[#0055a2] dark:text-white">
               Login
             </h3>
           </a>
         </div>
         <div
-          className="w-[90%] md:w-full bg-purple-300
+          className="w-[90%] md:w-full bg-[#0055a2]
           dark:bg-[#1E212A] border
           px-6 py-4 mt-6 overflow-hidden
          shadow-md sm:max-w-md rounded-lg"
@@ -57,7 +57,7 @@ const Login = () => {
               <label
                 htmlFor="email"
                 className="block text-sm font-medium 
-                text-purple-950 dark:text-white" 
+                text-purple-950 text-white" 
               >
                 Email
               </label>
@@ -73,7 +73,7 @@ const Login = () => {
               <label
                 htmlFor="password"
                 className="block text-sm 
-                font-medium text-purple-950 dark:text-white"
+                font-medium text-white"
               >
                 Password
               </label>

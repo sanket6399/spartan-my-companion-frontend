@@ -87,7 +87,7 @@ const Register = () => {
       >
         <div>
           <a href="/">
-            <h3 className="text-4xl font-bold dark:text-white">
+          <h3 className="text-4xl font-bold text-[#0055a2] dark:text-white">
               SJSU MyCompanion
             </h3>
           </a>
