@@ -56,7 +56,7 @@ const Content = () => {
               >
                 <div className="left-section space-y-1 text-center">
                   <Arrowup id={question.question_id} />
-                  <h3 className="text-sm md:text-base">
+                  <h3 className="text-sm text-[#0055a2] md:text-base">
                     {question?.upvote?.length || 0}
                   </h3>
                   <Arrowdown id={question.question_id} />
