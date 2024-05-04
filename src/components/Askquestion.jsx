@@ -37,12 +37,12 @@ const Askquestion = () => {
       <Toaster />
       <div
         className="md:mx-12 flex flex-col items-center 
-      gap-4 mb-12 border p-4 pb-6 rounded-md bg-purple-300 
+      gap-4 mb-12 border p-4 pb-6 rounded-md bg-[#0055a2]
       dark:bg-[#1E212A]  mt-12"
       >
         <h1
           className="text-2xl font-bold text-center
-        text-purple-600 
+        text-white 
         "
         >
           Setup an Event for which you want companion
@@ -50,7 +50,7 @@ const Askquestion = () => {
 
         <form onSubmit={handleSubmit} className="form w-full ">
           <div className="title">
-            <label className="text-gray-800 text-start dark:text-white">
+            <label className="text-gray-800 text-start text-white">
               Event
             </label>
             <input
@@ -61,7 +61,7 @@ const Askquestion = () => {
             />
           </div>
           <div className="desc mt-3">
-            <label className="text-gray-800 text-start dark:text-white">
+            <label className="text-gray-800 text-start text-white">
               Description
             </label>
             <textarea
@@ -71,7 +71,7 @@ const Askquestion = () => {
             />
           </div>
           <div className="tages mt-3">
-            <label className="text-gray-800 text-start dark:text-white">
+            <label className="text-gray-800 text-start text-white">
               Event Category
             </label>
             <input
@@ -83,10 +83,10 @@ const Askquestion = () => {
           </div>
           <button
             type="submit"
-            className="mt-8 w-[230px] mx-auto flex items-center gap-2 bg-purple-700 rounded-md shadow-sm px-8 py-2 cursor-pointer"
+            className="mt-8 w-[230px] mx-auto flex items-center gap-2 bg-white rounded-md shadow-sm px-8 py-2 cursor-pointer"
           >
             <Share />
-            <span className="text-white">Post on SJSU Community</span>
+            <span className="text-[#0055a2]">Post on SJSU Community</span>
           </button>
         </form>
       </div>

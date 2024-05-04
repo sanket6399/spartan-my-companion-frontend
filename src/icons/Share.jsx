@@ -8,7 +8,7 @@ const Share = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-4 h-4 text-white"
+      className="w-4 h-4 text-[#0055a2]"
     >
       <path
         strokeLinecap="round"
