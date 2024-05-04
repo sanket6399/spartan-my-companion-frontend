@@ -39,7 +39,7 @@ const Navbar = () => {
           {!open ? <Hamburger /> : <Cancel />}
         </div>
         <img src={main_icon} alt="icon" className="w-7 h-7 md:w-9 md:h-9 rounded-full" onClick={handleReload}/>  
-        SPARTAN MyCompanion
+        <div onClick={handleReload}>SPARTAN MyCompanion</div>
       </div>
 
       {/* // Search Bar */}
