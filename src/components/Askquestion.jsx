@@ -25,10 +25,10 @@ const Askquestion = () => {
       question
     );
     if (res.status === 200) {
-      toast.success("Question added successfully", (duration = 2000));
+      toast.success("Question added successfully", (duration = 3000));
       setTimeout(() => {
         naviate("/");
-      }, 2000);
+      }, 3000);
     }
   };
 
