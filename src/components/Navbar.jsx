@@ -18,7 +18,7 @@ const Navbar = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   
   const handleReload = () => {
-    window.location.reload();
+    window.location.href = 'https://main.d2xbt2bm4byqng.amplifyapp.com/';
   };
   const navigate = useNavigate();
   return (
