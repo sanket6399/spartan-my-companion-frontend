@@ -9,7 +9,7 @@ const Sidebar = () => {
   const open = useSelector((state) => state.sidebar.open);
   const dispatch = useDispatch();
   const active =
-    "  bg-purple-100 text-purple-500 px-4 py-2 rounded-sm border-l-4 border-purple-700";
+    "  bg-purple-100 text-[#0055a2] px-4 py-2 rounded-sm border-l-4 border-[#0055a2]";
   return (
     <div
       className={`${
