@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 
-const Arrowdown = ({ id }) => {
+const Arrowdown = ({ id, toggleDummy }) => {
   const userId = JSON.parse(localStorage.getItem("user"))._id;
 
   const handleClick = async (e) => {
@@ -16,6 +16,7 @@ const Arrowdown = ({ id }) => {
       // console.log(res.status);
       if (res.status === 200) {
         alert("downvoted successfully");
+        toggleDummy();
       } else {
         alert("downvoted successfully");
       }

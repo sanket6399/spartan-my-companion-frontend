@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 
-const Arrowup = ({ id }) => {
+const Arrowup = ({ id, toggleDummy }) => {
   const userId = JSON.parse(localStorage.getItem("user"))._id;
 
   const handleClick = async (e) => {
@@ -16,6 +16,7 @@ const Arrowup = ({ id }) => {
       //console.log(res.status);
       if (res.status === 200) {
         alert("Upvoted successfully");
+        toggleDummy();
       } else {
         alert("Upvoted successfully");
       }

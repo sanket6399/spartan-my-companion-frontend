@@ -12,12 +12,28 @@ import SyncLoader from "react-spinners/SyncLoader";
 import { Toaster } from "react-hot-toast";
 import Loading from "./Loading";
 import NothingHere from "./NothingHere";
+import UpvotePopup from "../icons/UpvotePopUp";
 
 const Content = () => {
   const { topic } = useParams();
   const [openId, setOpenId] = React.useState([]);
   const [answer, setAnswer] = React.useState("");
+  const [popupVisibility, setPopupVisibility] = React.useState({}); // This holds the visibility state for each question
 
+  const [dummy, setDummy] = React.useState(false);
+
+  // Handler to toggle the dummy state
+  const toggleDummy = () => {
+    setDummy((prev) => !prev); // Toggle the state to force re-render
+  };
+
+  const handleUpvoteClick = (questionId) => {
+    // Toggle visibility state for the specific question
+    setPopupVisibility((prevState) => ({
+      ...prevState,
+      [questionId]: !prevState[questionId],
+    }));
+  };
   const { isLoading, data } = useQuery("getAllQuestions", () => {
     if (topic) {
       return newRequests
@@ -25,7 +41,9 @@ const Content = () => {
         .then((res) => res.data);
     } else {
       return newRequests
-        .get("https://x6scf9otx8.execute-api.us-east-1.amazonaws.com/spartan-v1/spartan-get-questions")
+        .get(
+          "https://x6scf9otx8.execute-api.us-east-1.amazonaws.com/spartan-v1/spartan-get-questions"
+        )
         .then((res) => res.data.body);
     }
   });
@@ -33,14 +51,15 @@ const Content = () => {
   if (isLoading) return <Loading />;
   //console.log(data);
   //console.log(data[0].question_id);
-//  console.log(data.map((question) => question._id));
+  //  console.log(data.map((question) => question._id));
   return (
     <div
       className="md:w-[60%] flex flex-col items-center gap-y-5 
     md:gap-8 my-8 "
     >
       <Toaster />
-      {data && data.length > 0 &&
+      {data &&
+        data.length > 0 &&
         data.map((question, index) => {
           return (
             <div
@@ -55,11 +74,28 @@ const Content = () => {
               p-4 md:p-5 rounded-lg shadow-md flex items-start gap-5"
               >
                 <div className="left-section space-y-1 text-center">
-                  <Arrowup id={question.question_id} />
-                  <h3 className="text-sm text-[#0055a2] md:text-base">
-                    {question?.upvote?.length || 0}
+                  <Arrowup
+                    id={question.question_id}
+                    toggleDummy={toggleDummy}
+                  />
+                  <h3
+                    className="cursor-pointer text-sm text-[#0055a2] md:text-base"
+                    onClick={() => handleUpvoteClick(question.question_id)}
+                  >
+                    {Array.isArray(question?.upvote)
+                      ? question.upvote.length
+                      : 0}
                   </h3>
-                  <Arrowdown id={question.question_id} />
+                  {popupVisibility[question.question_id] && (
+                    <UpvotePopup
+                      upvotes={question?.upvote || []}
+                      onClose={() => handleUpvoteClick(question.question_id)}
+                    />
+                  )}
+                  <Arrowdown
+                    id={question.question_id}
+                    toggleDummy={toggleDummy}
+                  />
                 </div>
                 <div className="right-section w-full">
                   <h1 className="text-base md:text-lg dark:text-white">
